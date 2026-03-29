@@ -1,6 +1,6 @@
 # Python Calculator Program
 # Enhanced with error handling, readability, and user experience improvements
-# 协作者：XXX   学号：XXXXXXXX
+# 协作者：xieyuhan   学号：20119468
 # 版本：V1.1 修复异常提示，补充个人信息注释
 
 def add(x, y):
