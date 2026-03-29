@@ -1,6 +1,4 @@
 # This function adds two numbers
-# NAME: M McMahon
-
 def add(x, y):
     return x + y
 
@@ -14,9 +12,11 @@ def multiply(x, y):
 
 # This function divides two numbers
 def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
     return x / y
 
-
+# 主程序逻辑
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
@@ -24,10 +24,10 @@ print("3.Multiply")
 print("4.Divide")
 
 while True:
-    # take input from the user
+    # 获取用户操作选择
     choice = input("Enter choice(1/2/3/4): ")
 
-    # check if choice is one of the four options
+    # 验证输入是否有效
     if choice in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
@@ -36,22 +36,19 @@ while True:
             print("Invalid input. Please enter a number.")
             continue
 
+        # 根据选择执行对应运算
         if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
-
+            print(f"{num1} + {num2} = {add(num1, num2)}")
         elif choice == '2':
-            print("You enter code for #2 here")
-            # CODE HERE ENTERED
+            print(f"{num1} - {num2} = {subtract(num1, num2)}")
         elif choice == '3':
-            print("You enter code for #3 here")
-            
+            print(f"{num1} * {num2} = {multiply(num1, num2)}")
         elif choice == '4':
-            print("You enter code for #4 here")
-            
-        # check if user wants another calculation
-        # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
-          break
+            print(f"{num1} / {num2} = {divide(num1, num2)}")
+
+        # 询问是否继续计算
+        next_calc = input("Let's do next calculation? (yes/no): ")
+        if next_calc.lower() == 'no':
+            break
     else:
         print("Invalid Input")
