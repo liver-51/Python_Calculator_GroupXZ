@@ -1,3 +1,8 @@
+# Python Calculator Program
+# Enhanced with error handling, readability, and user experience improvements
+# 协作者：XXX   学号：XXXXXXXX
+# 版本：V1.1 修复异常提示，补充个人信息注释
+
 def add(x, y):
     """Return the sum of two numbers."""
     return x + y
@@ -56,7 +61,8 @@ def main():
                 result = divide(num1, num2)
                 print(f"✅ {num1} / {num2} = {result}")
         except ZeroDivisionError as e:
-            print(f"❌ Error: {e}")
+            # 优化异常提示
+            print(f"❌ Calculation error: {e} Please enter a non-zero divisor.")
             continue
 
         # Ask user if they want to perform another calculation
